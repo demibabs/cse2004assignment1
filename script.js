@@ -1,3 +1,4 @@
+//reset page scroll upon refresh (otherwise the form breaks when reloading)
 window.scrollTo(0,0);
 
 const input = document.getElementById("inp");
@@ -5,8 +6,8 @@ input.value = "";
 let keyCount = 0;
 const spriteZero = "sprite zero"
 
-//kicks user out of form if they
-//don't answer "sprite zero"
+// kicks user out of form if they
+// don't answer "sprite zero"
 input.addEventListener("input", function(event){
     keyCount = input.value.length;
     const currentChar = input.value[keyCount - 1];
@@ -16,11 +17,12 @@ input.addEventListener("input", function(event){
     }
     else if (keyCount === 11){
         scroll("correct!");
+        document.querySelector("p").innerHTML = "I'm glad that someone else has great taste too. I might be preaching to the choir, but I'm here to spread the gospel about one of humanity's finest creations. Delicious, refreshing and absolutely zero calories. An unbeatable combo.";
     }
     console.log(input.value);
 });
 
-//scrolls the page by 1 screen height
+// scrolls the page by 1 screen height
 // while replacing the form in the middle 
 // of the screen with a message
 function scroll(message){
@@ -41,22 +43,20 @@ function scroll(message){
 }
 
 
-
+// opens link if user clicks button or images
 document.addEventListener("click",function(event){
     if (event.target.tagName === "IMG" || event.target.id === "buybutton"){
         window.location.href = "https://www.walmart.com/ip/Sprite-Zero-Lemon-Lime-Soda-12pk/10291649?wmlspartner=wlpa&selectedSellerId=101430281";
     }
 });
 
-document.getElementById("bottom").style.marginBottom = 1000;
-
+//makes the image banners
 for (let i = 0; i < 50; i++) {
     const dividers = [...document.getElementsByClassName("divider")];
     dividers.forEach(e => {
         const image = document.createElement("img");
-        image.setAttribute("src", "images/Sprite_2ero.webp");
+        image.setAttribute("src", "images/img.webp");
         image.setAttribute("alt", "a bottle of Sprite Zero");
-        // Don't add hover-enabled class initially
         e.appendChild(image);
     });
 }

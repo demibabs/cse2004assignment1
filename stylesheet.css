@@ -96,7 +96,7 @@ p{
 }
 
 ul{
-    padding: 15px 15px 15px 35px;
+    padding: 15px 15px 15px 40px;
     font-size: 25px;
     color: rgb(191, 255, 206);
     background-color: var(--base-color);
@@ -199,6 +199,9 @@ div form div{
     margin: 20px;
 }
 
+#last{
+    color: rgb(191, 255, 206);
+}
 #bottom{
     margin-bottom: -100vh;
 }
